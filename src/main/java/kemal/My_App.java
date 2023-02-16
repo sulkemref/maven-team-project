@@ -7,5 +7,6 @@ public class My_App {
         System.out.println("Start app block");
 
         System.out.println("Body block");
+
     }
 }

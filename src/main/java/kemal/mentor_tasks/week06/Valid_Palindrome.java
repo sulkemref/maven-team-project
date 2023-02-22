@@ -7,34 +7,19 @@ public class Valid_Palindrome {
 
         System.out.println(isPalindrome("amanaplanacanalpanama"));
 
-        String s = "A man, a plan, a canal: Panama";
+        System.out.println(isPalindromeSimple("amanaplanacanalpanama"));
 
-        String newS = "";
-
-        for(int i = 0; i<s.length();i++){
-            if(Character.isLetterOrDigit(s.charAt(i))){
-                newS+=s.charAt(i);
-            }
-        }
-
-        System.out.println(newS);
 
     }
 
     public static boolean isPalindromeSimple(String s){
 
-        String newS = "";
-
-        for(int i = 0; i<s.length();i++){
-            if(Character.isLetterOrDigit(s.charAt(i))){
-                newS+= ""+s.charAt(i);
-            }
-        }
+        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
 
         int halfLength = s.length()/2;
 
-        for(int i = 0 , j = newS.length()-1; i<=halfLength; i++, j--){
-            if(newS.charAt(i)!=newS.charAt(j))
+        for(int i = 0 , j = s.length()-1; i<=halfLength; i++, j--){
+            if(s.charAt(i)!=s.charAt(j))
                 return false;
         }
 
@@ -42,15 +27,9 @@ public class Valid_Palindrome {
     }
     public static boolean isPalindrome(String s) {
 
-        String newS = "";
+        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
 
-        for(int i = 0; i<s.length();i++){
-            if(Character.isLetterOrDigit(s.charAt(i))){
-                newS+= ""+s.charAt(i);
-            }
-        }
-
-        return newS.equalsIgnoreCase(reverse(newS));
+        return s.equalsIgnoreCase(reverse(s));
 
     }
     public static String reverse(String str) {

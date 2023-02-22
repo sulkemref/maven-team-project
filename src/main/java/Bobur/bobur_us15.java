@@ -1,4 +1,4 @@
-package Bobur_Us15;
+package Bobur;
 
 public class bobur_us15 {
     public static void main(String[] args) {

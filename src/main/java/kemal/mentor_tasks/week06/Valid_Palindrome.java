@@ -4,11 +4,9 @@ public class Valid_Palindrome {
 
     public static void main(String[] args) {
 
-
         System.out.println(isPalindrome("amanaplanacanalpanama"));
 
         System.out.println(isPalindromeSimple("amanaplanacanalpanama"));
-
 
     }
 
@@ -18,7 +16,7 @@ public class Valid_Palindrome {
 
         int halfLength = s.length()/2;
 
-        for(int i = 0 , j = s.length()-1; i<=halfLength; i++, j--){
+        for(int i = 0 , j = s.length()-1; i<halfLength; i++, j--){
             if(s.charAt(i)!=s.charAt(j))
                 return false;
         }
@@ -40,5 +38,4 @@ public class Valid_Palindrome {
         }
         return result;
     }
-
 }

@@ -10,16 +10,17 @@ public class ValidAnagram {
 
     public static void main(String[] args) {
 
-        String s = "DOG";
-        String t ="GOD";
+        String s = "ANAGRAM";
+        String t ="NAGARAM";
 
-        anagram(s,t);
+        anagramCheck(s,t);
 
 
     }
 
-
-    public static void anagram(String s, String t){
+// Time Complexity : O(n log n)
+// Space Complexity: 0(n)
+    public static void anagramCheck(String s, String t){
 
         char[] sArray = t.toLowerCase().toCharArray();
         char[] tArray = s.toLowerCase().toCharArray();

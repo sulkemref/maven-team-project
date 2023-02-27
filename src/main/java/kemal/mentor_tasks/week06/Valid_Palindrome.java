@@ -12,7 +12,7 @@ public class Valid_Palindrome {
 
     public static boolean isPalindromeSimple(String s){
 
-        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+        s = s.toLowerCase().replaceAll("[^a-z0-9]", "");
 
         int halfLength = s.length()/2;
 
@@ -25,7 +25,7 @@ public class Valid_Palindrome {
     }
     public static boolean isPalindrome(String s) {
 
-        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+        s = s.toLowerCase().replaceAll("[^a-z0-9]", "");
 
         return s.equalsIgnoreCase(reverse(s));
 

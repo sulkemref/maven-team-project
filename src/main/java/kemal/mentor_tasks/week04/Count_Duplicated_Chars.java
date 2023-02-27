@@ -3,7 +3,7 @@ package kemal.mentor_tasks.week04;
 import java.util.*;
 import java.util.function.Function;
 
-public class CountDuplicatedChars {
+public class Count_Duplicated_Chars {
 
 //    Count the number of Duplicated Chars
 //    Write a function that will return the count of distinct case-insensitive alphabetic characters

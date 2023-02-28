@@ -1,7 +1,13 @@
 package almi.JavaCodingTasks.week7;
 
 import java.util.Arrays;
+/** Given an array nums containing n distinct numbers in the range [0, n], return the only number in
+ the range that is missing from the array.
 
+ Example 1:
+ Input: nums = [3, 0, 1]
+ Output: 2
+ **/
 public class MissingNumber {
 
     public static void main(String[] args) {

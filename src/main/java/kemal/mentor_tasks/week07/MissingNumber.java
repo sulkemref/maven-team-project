@@ -7,8 +7,23 @@ public class MissingNumber {
 
     public static void main(String[] args) {
 
+
+        /*
+        {9,6,4,2,3,5,7,0,1}; sum3
+
+        0,1,2,3,4,5,6,7, ,9 sum2
+
+
+        {9,6,4,2,3,5,7,0,1}; sum3
+        0,1,2,3,4,5,6,7,8,9 sum1
+
+
+
+
+         */
+
         int[] arr1 = {9,6,4,2,3,5,7,0,1};
-        int[] arr2 = {3, 0, 1};
+        int[] arr2 = {3, 0, 2, 1};
 
         System.out.println(missingNumber(arr1));
         System.out.println(missingNumber(arr2));

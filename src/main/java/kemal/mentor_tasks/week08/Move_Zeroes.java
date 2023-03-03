@@ -12,7 +12,7 @@ public class Move_Zeroes {
 
     }
 
-    private static void moveZeroes(int[] nums) {
+    private static void moveZeroes(int[] nums) { // space O(1) time O(n)
         int nonZeroIndexes = 0;
 
         for(int i  = 0; i< nums.length; i++){

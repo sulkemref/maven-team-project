@@ -16,7 +16,7 @@ public class Remove_Duplicates_from_Sorted_Array {
 
     }
 
-    private static int removeDuplicates(int[] nums) {
+    private static int removeDuplicates(int[] nums) {  // space O(1) time O(n)
         int uniqNumbersCount = 1;
         int curretNumber = nums[0];
 

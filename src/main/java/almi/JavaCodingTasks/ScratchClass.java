@@ -1,38 +1,19 @@
 package almi.JavaCodingTasks;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ScratchClass {
 
     public static void main(String[] args) {
 
-
+        IntStream.of(1, 2, 3, 4)
+                .filter(e -> e > 2)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(e -> e * e)
+                .forEach(System.out::println);
+//                .peek(e -> System.out.println("Mapped value: " + e)).sum();
 
 
     }
 
-    public static List<Integer> twoSum(List<Integer> array, final int target){
-        final int n = target;
-
-        var sortedArray = array
-                .stream()
-                .sorted()
-                .filter(integer -> integer <= n)
-                .collect(Collectors.toList());
-
-        if (sortedArray.size() == 2) {
-            return sortedArray;
-        }
-//        else {
-//            for (int i = 0; i < sortedArray.size(); i++) {
-//                System.out.println(target - array.get(i));
-//            }
-//
-//        }
-
-
-
-        return sortedArray;
-    }
 }

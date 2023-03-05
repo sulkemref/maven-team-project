@@ -1,8 +1,6 @@
 package almi.JavaCodingTasks.week7;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /** Given an array of integers nums and an integer target, return the two numbers such that they add
@@ -22,7 +20,7 @@ public class TwoSum {
         final int target3 = 20;//     [5,15]
 
 
-        int[] twoSumAnswers = twoSum(array, target);
+        int[] twoSumAnswers = twoSumBrute(array, target);
 
         System.out.println(Arrays.toString(twoSumAnswers));
 
@@ -30,7 +28,8 @@ public class TwoSum {
 
     }
 
-    public static int[] twoSum(int[] array, final int target){
+//    |0(n^2) BRUTE FORCE|
+    public static int[] twoSumBrute(int[] array, final int target){
 
         int[] newArray = new int[2];  // new array with [2] indexes -> these 2 indexes will represent the ints needed to Sum == target
 
@@ -48,7 +47,23 @@ public class TwoSum {
         }
 
 
+        public static int[] twoSumOptimal(int[] array, final int target){
+
+            Map<Integer, Integer> map = new HashMap<>();
+
+            for (int i = 0; i < array.length; i++) {
+                int potentialMatch = target - array[i];
+
+                if (map.containsKey(potentialMatch)) return new int[]{i, map.get(potentialMatch)};
+                else map.put(array[i], i);
+            }
+
+            return new int[]{};
+        }
+
+
 
     }
+
 
 

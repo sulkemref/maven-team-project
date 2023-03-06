@@ -9,7 +9,8 @@ public class TwoSum {
 
     public static void main(String[] args) {
         int[] nums = {2,7,11,15};
-
+            // 9-7
+        //9
         System.out.println(Arrays.toString(twoSumIndexes(nums,9)));
 
         System.out.println(Arrays.toString(twoSumElements(nums,9)));
@@ -31,8 +32,7 @@ public class TwoSum {
     }
 
     public static int[] twoSumElements(int[] nums, int target) {
-        int[] result = {nums[twoSumIndexes(nums,target)[0]], nums[twoSumIndexes(nums,target)[1]]};
-        return result ;
+        return new int[] {nums[twoSumIndexes(nums,target)[0]], nums[twoSumIndexes(nums,target)[1]]};
     }
 
 

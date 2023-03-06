@@ -27,12 +27,12 @@ public class MoveZeroes {
 
             if (nums[i] != 0) {
                 nums[notZero++] = nums[i];          // if number is not zero it is pushed to the front
-                                                   //  (and the front is moved to the right ea time)
+                                                   //  (and the front is moved to the right ea time a # is pushed)
             }
         }
 
         for (int i = notZero; i < nums.length; i++) {  // starting from index [3] (3 non-zero elements on Array)
-            nums[i] = 0;
+            nums[i] = 0;                               // the elements are = 0
         }
 
         System.out.println(Arrays.toString(nums));

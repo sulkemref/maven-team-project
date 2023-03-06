@@ -26,7 +26,8 @@ public class MoveZeroes {
         for (int i = 0; i < nums.length; i++) {
 
             if (nums[i] != 0) {
-                nums[notZero++] = nums[i];          // if number is not zero
+                nums[notZero++] = nums[i];          // if number is not zero it is pushed to the front
+                                                   //  (and the front is moved to the right ea time)
             }
         }
 

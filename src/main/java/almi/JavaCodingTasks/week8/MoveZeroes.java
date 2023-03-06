@@ -15,19 +15,27 @@ public class MoveZeroes {
         int[] nums = {0, 1, 0, 3, 12};
 
 
-//      |HOW TO ADD 0s to the end of Array|
-//        nums[nums.length-1]=0;
-
-        for (int i = 0; i < nums.length; i++) {
-            int zeroCount = 0;
-
-            if (nums[i] == 0) {
-                zeroCount++;
-//                nums[nums.length-1] = 0;
-            }
-        }
+        movement(nums);
 
 
     }
+
+    private static void movement(int[] nums){
+        int notZero = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] != 0) {
+                nums[notZero++] = nums[i];          // if number is not zero
+            }
+        }
+
+        for (int i = notZero; i < nums.length; i++) {  // starting from index [3] (3 non-zero elements on Array)
+            nums[i] = 0;
+        }
+
+        System.out.println(Arrays.toString(nums));
+    }
+
 
 }

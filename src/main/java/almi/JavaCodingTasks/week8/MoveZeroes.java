@@ -20,6 +20,8 @@ public class MoveZeroes {
 
     }
 
+//    Space - 0(1)
+//    Time -  O(n)
     private static void movement(int[] nums){
         int notZero = 0;
 

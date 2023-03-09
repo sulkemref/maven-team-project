@@ -4,7 +4,7 @@ public class Remove_Duplicates_from_Sorted_Array {
 
     public static void main(String[] args) {
 
-        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        int[] nums = {0,0,1,1,1,2,2,3,3,4}; //{0,1,2,3,4,2,2,3,3,4}
 
         int number = (removeDuplicates(nums));
 
@@ -20,7 +20,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         int uniqNumbersCount = 1;
         int curretNumber = nums[0];
 
-        for(int i  = 1; i< nums.length; i++){
+        for(int i  = 1; i< nums.length; i++){ //{0,1,2,3,4,2,2,3,3,4}
             if(nums[i]!=curretNumber){
                 nums[uniqNumbersCount++]=nums[i];
                 curretNumber=nums[i];

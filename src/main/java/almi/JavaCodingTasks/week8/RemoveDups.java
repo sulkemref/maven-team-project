@@ -17,23 +17,23 @@ public class RemoveDups {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         int[] nums2 = {1,1,2};
 
-        removeDuplicatesFromArray(nums2);
+        removeDuplicatesFromArray(nums);
 
 
     }
-
+//    Space - 0(1)
+//    Time -  O(n)
     private static void removeDuplicatesFromArray(int[] nums) {
-        int totalDupCount = 1;
+        int uniqueNumCount = 1;
 
         for (int i = 1; i < nums.length; i++) {
 
             if (nums[i-1] != nums[i]){
-                nums[totalDupCount] = nums[i];
-                totalDupCount++;
+                nums[uniqueNumCount++] = nums[i];
             }
 
 
         }
-        System.out.println("K=" + totalDupCount + " " + Arrays.toString(nums) );
+        System.out.println("K=" + uniqueNumCount + " " + Arrays.toString(nums) );
     }
 }

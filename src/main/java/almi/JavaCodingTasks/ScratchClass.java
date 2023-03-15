@@ -1,5 +1,7 @@
 package almi.JavaCodingTasks;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 public class ScratchClass {
@@ -12,6 +14,13 @@ public class ScratchClass {
                 .map(e -> e * e)
                 .forEach(System.out::println);
 //                .peek(e -> System.out.println("Mapped value: " + e)).sum();
+
+
+
+
+
+
+
 
 
     }

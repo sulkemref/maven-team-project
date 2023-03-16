@@ -22,24 +22,31 @@ public class Length_of_Last_Word {
 
     public static void main(String[] args) {
 
-        System.out.println(lengthOfLastWord("Hello World"));
-        System.out.println(lengthOfLastWord(" fly me to the moon "));
-        System.out.println(lengthOfLastWord("luffy is still joyboy"));
-        System.out.println(lengthOfLastWord("a"));
+        System.out.println(lengthOfLastWord2("Hello World"));
+        System.out.println(lengthOfLastWord2(" fly me to the moon "));
+        System.out.println(lengthOfLastWord2("luffy is still joyboy       "));
+        System.out.println(lengthOfLastWord2("a         "));
 
 
     }
-    private static int lengthOfLastWord(String s){ // space O(1) time O(1)
-        return s.split(" ")[s.split(" ").length-1].length();
+    private static int lengthOfLastWord(String s){ // space O(n) time O(n)
+        return s.split(" ")[s.split(" ").length-1].length(); // space O(n) + O(n) time O(n) + O(n)
     }
+
     private static int lengthOfLastWord2(String s){ // space O(1) time O(n)
-        s=s.trim();
-        int result=0;
-        for (int i = s.length()-1; i>=0; i--){
+        int result = 0;
+        int index = s.length()-1;
+        for (int i = index; i>=0; i--){ // time O(n)
+            if(s.charAt(i)!=' ') {
+                index = i;
+                break;
+            }
+        }
+        for (int i  = index; i>=0; i--){ // time O(n)
             if (s.charAt(i)==' ')
                 break;
             result++;
         }
-        return result;
+        return result; // time O(n) + O(n) = O(n)
     }
 }

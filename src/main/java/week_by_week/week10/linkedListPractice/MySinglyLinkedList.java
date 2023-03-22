@@ -4,9 +4,43 @@ import java.util.NoSuchElementException;
 
 public class MySinglyLinkedList {
 
-    public MyNode head;
-    public MyNode tail;
+    public MyNode head;//this will keep the information of first node
+    public MyNode tail;//this will keep the information of last node
     public int size;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public boolean isEmpty() {
         return head == null;

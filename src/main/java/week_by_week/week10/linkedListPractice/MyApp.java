@@ -6,9 +6,14 @@ public class MyApp {
 
         MySinglyLinkedList mySinglyLinkedList = new MySinglyLinkedList();
 
-        mySinglyLinkedList.print();
+        System.out.println(mySinglyLinkedList.isEmpty());
+
+        System.out.println("======================================");
+        //mySinglyLinkedList.print();
         mySinglyLinkedList.add(5);
         mySinglyLinkedList.add(10);
+        System.out.println(mySinglyLinkedList.isEmpty());
+        System.out.println("=======================================");
         mySinglyLinkedList.addFirst(20);
         mySinglyLinkedList.print();
         System.out.println();

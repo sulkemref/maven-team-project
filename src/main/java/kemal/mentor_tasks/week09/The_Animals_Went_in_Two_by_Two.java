@@ -1,7 +1,6 @@
 package kemal.mentor_tasks.week09;
 
 import java.util.*;
-
 /*
 Question-2 The Animals Went in Two by Two
 A great flood has hit the land, and just as in Biblical times we need to get the animals to the ark in pairs. We

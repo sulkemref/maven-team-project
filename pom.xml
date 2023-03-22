@@ -26,6 +26,12 @@
             <artifactId>spring-context</artifactId>
             <version>6.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.9.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>

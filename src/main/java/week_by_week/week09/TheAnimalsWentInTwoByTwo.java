@@ -57,4 +57,5 @@ public class TheAnimalsWentInTwoByTwo {
         pairs.entrySet().removeIf(e -> e.getValue() == 1);
         return pairs;
     }
+
 }

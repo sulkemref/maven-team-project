@@ -9,42 +9,10 @@ public class MySinglyLinkedList {
     public int size;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public boolean isEmpty() {
         return head == null;
     }
+
 
     public void add(int data) {
         MyNode myNode = new MyNode(data);
@@ -79,12 +47,12 @@ public class MySinglyLinkedList {
         }
     }
 
-    public int indexOf(int index) {
+    public int indexOf(int value) {
         MyNode current = head;
         int count = 0;
         while (current != null) {
-            if (count == index) {
-                return current.value;
+            if (current.value == value) {
+                return count;
             }
             count++;
             current = current.next;
@@ -98,16 +66,18 @@ public class MySinglyLinkedList {
 
         MyNode prev = head;
         MyNode current = head;
-
+//this is the code provided by Fatih in class.
         while (current != null) {
             if (current.value == value) {
                 if (current == head) {
                     head = current.next;
-
+                    current.next = null;
                 } else if (current == tail) {
                     tail = prev;
+                    prev.next = null;//Ex -Tail will be eligible for Garbage Collection
                 } else {
                     prev.next = current.next;
+                    current.next = null;// Current will be eligible for Garbage Collection
                 }
                 size--;
             }

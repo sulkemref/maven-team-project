@@ -31,7 +31,7 @@ public class NodeUtils {
     public static ListNode reverseListNode(ListNode head){
         ListNode present = head;
         ListNode prev = null;
-        ListNode next = null;
+        ListNode next;
         while (present!=null){
             next = present.next;
             present.next=prev;

@@ -30,13 +30,13 @@ public class Remove_Duplicates_From_an_Unsorted_LinkedList {
             return null;
         if(head.next==null)
             return head;
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer,Boolean> map = new HashMap<>();
         ListNode current = head;
         while(current!=null){
             if(map.containsKey(current.val)){
-                map.put(current.val,0);
+                map.put(current.val,true);
             }else{
-                map.put(current.val,1);
+                map.put(current.val,false);
             }
             current=current.next;
         }
@@ -46,7 +46,7 @@ public class Remove_Duplicates_From_an_Unsorted_LinkedList {
         ListNode priv = dummy;
 
         while(current!=null){
-            if(map.get(current.val)==0){
+            if(map.get(current.val)){
                 priv.next=current.next;
             }else{
                 priv=current;
@@ -54,6 +54,5 @@ public class Remove_Duplicates_From_an_Unsorted_LinkedList {
             current=current.next;
         }
         return dummy.next;
-
     }
 }

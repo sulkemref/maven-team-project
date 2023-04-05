@@ -3,7 +3,8 @@ package kemal.mentor_tasks.week04;
 import java.util.*;
 import java.util.function.Function;
 
-public class Count_Duplicated_Chars {
+public class
+Count_Duplicated_Chars {
 
 //    Count the number of Duplicated Chars
 //    Write a function that will return the count of distinct case-insensitive alphabetic characters
@@ -62,7 +63,7 @@ public class Count_Duplicated_Chars {
 
 
     }
-    private static int countDub(String str){ // Indivisibilities
+    public static int countDub(String str){ // Indivisibilities
         str = str.toUpperCase();
         int result = 0;
         Map<Character,Integer> map = new HashMap<>(); // empty

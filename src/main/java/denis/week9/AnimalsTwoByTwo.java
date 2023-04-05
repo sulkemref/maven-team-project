@@ -11,6 +11,11 @@ public class AnimalsTwoByTwo {
         //List <String> animalList = new ArrayList<>(Arrays.asList("dog","cat","dog","cat","beaver","cat"));
         List<String> animalList = new ArrayList<>(Arrays.asList
                 ("goat","goat","rabbit","rabbit","rabbit","duck","horse","horse","swan"));
+        System.out.println(testAnimals(animalList));
+    }
+
+    public static Map<String, Integer> testAnimals (List<String> animalList) {
+
         Map<String, Integer> resultMap = new HashMap<>();
 
         for (int i = 0; i <animalList.size(); i++) {
@@ -20,6 +25,6 @@ public class AnimalsTwoByTwo {
             }
 
         }
-        System.out.println(resultMap);
+        return resultMap;
     }
 }

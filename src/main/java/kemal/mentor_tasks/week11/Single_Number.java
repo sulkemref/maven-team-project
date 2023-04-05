@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Single_Number {
 
+//    https://leetcode.com/problems/single-number/
+
     public static void main(String[] args) {
 
         int[] nums1 = {2,2,1};
@@ -36,6 +38,6 @@ public class Single_Number {
                 return eachEntry.getKey();
         }
 
-        return 0;
+        return Integer.MAX_VALUE;
     }
 }

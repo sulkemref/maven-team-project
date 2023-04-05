@@ -1,10 +1,10 @@
-package kemal.mentor_tasks.week11;
+package kemal.mentor_tasks.week12;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NodeUtils {
-
     public static ListNode createListNodeFromArray(int[] arr){
         int length = arr.length;
         if(length==0){

@@ -4,7 +4,7 @@ public class Plus_One {
 
 //    https://leetcode.com/problems/plus-one/description/
 
-    public int[] plusOne(int[] digits) {
+    public int[] plusOne(int[] digits) { // time O(n) space O(n)
         for(int i = digits.length-1; i>=0;i--) {
             if (digits[i] < 9) {
                 digits[i]++;

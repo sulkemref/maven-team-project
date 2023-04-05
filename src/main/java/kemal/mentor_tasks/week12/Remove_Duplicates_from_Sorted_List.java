@@ -4,7 +4,7 @@ public class Remove_Duplicates_from_Sorted_List {
 
 //    https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
-    public ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) { // time O(n) space O(n)
         if(head==null)
             return null;
         if(head.next==null)

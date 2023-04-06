@@ -4,7 +4,7 @@ public class ColumnNumber {
 
     public static void main(String[] args) {
 
-        String str = "ZY";
+        String str = "BCM";
         char[] charArray = str.toCharArray();
 
         int result = 0;

@@ -1,4 +1,4 @@
-package week_by_week.week12.recordExamples;
+package week_by_week.week12.java17Examples.recordExamples;
 
 /**
  * record is implicitly final

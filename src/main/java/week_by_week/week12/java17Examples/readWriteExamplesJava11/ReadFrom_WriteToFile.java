@@ -1,4 +1,4 @@
-package week_by_week.week12.readWriteExamplesJava11;
+package week_by_week.week12.java17Examples.readWriteExamplesJava11;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -16,19 +16,19 @@ public class ReadFrom_WriteToFile {
     private static final String mainPath = "src/main/java/week_by_week/week12/readWriteExamplesJava11/";
     private static final String readPath = mainPath + "input.txt";
     private static final String writePath = mainPath + "output.txt";
-    private static final String writeContent = "1000 a big surprise 2000\nhello\nthis is a big surprise 1000";
+    private static final String writeContent = "Bobur is our team lead\nhello Hasan 1000\nhow are you Kemail 2000";
 
     public static void main(String[] args) throws IOException {
 //        withFilesReadStringJava11();
 //        withFilesReadAllLines();
 //        withFilesWrite();
 
-//        readWithStreamTokenizer();
+        readWithStreamTokenizer();
 
 //        withBufferedReader();
 //        withBufferedWriter();
 //        withFileInputStream();
-        withScanner();
+//        withScanner();
     }
 
     static void withFilesReadStringJava11() throws IOException {

@@ -1,4 +1,4 @@
-package week_by_week.week12;
+package week_by_week.week12.java17Examples;
 
 public class SwitchExampleJava17 {
     public static void main(String[] args) {

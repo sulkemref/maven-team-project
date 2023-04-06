@@ -1,4 +1,4 @@
-package week_by_week.week12.sealedExamplesJava17.vehicle;
+package week_by_week.week12.java17Examples.sealedExamplesJava17.vehicle;
 
 public non-sealed class RaceCar extends Car {
 

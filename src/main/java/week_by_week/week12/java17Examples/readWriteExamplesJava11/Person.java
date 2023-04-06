@@ -1,4 +1,4 @@
-package week_by_week.week12.readWriteExamplesJava11;
+package week_by_week.week12.java17Examples.readWriteExamplesJava11;
 
 import lombok.Getter;
 import lombok.Setter;

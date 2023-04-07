@@ -17,7 +17,8 @@ public class Array_of_Digits {
     }
     public static int[] arrayOfDigits(int n){
         if (n==0)
-           return new int[]{n};
+            return new int[]{0};
+
         if (n<0){
             System.out.print("- ");
             n=-n;

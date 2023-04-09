@@ -2,6 +2,8 @@ package kemal.mentor_tasks.week13;
 
 public class Happy_Number {
 
+//    https://leetcode.com/problems/happy-number/
+
     public boolean isHappy(int n) {
         if(n==1)
             return true;

@@ -1,14 +1,16 @@
 package kemal.mentor_tasks.week13;
 
+import kemal.utilities.ListNode;
+
 public class Remove_Linked_List_Elements {
 
 //    https://leetcode.com/problems/remove-linked-list-elements/
 
-    public ListNode13 removeElements(ListNode13 head, int val) {
+    public ListNode removeElements(ListNode head, int val) {
         if(head==null)
             return null;
-        ListNode13 current=head;
-        ListNode13 priv = current;
+        ListNode current=head;
+        ListNode priv = current;
 
         while(current!=null){
             if(current.val==val){

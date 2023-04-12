@@ -1,16 +1,17 @@
-package week_by_week.week12.aloSolutions.linekdListW12;
+package week_by_week.week13.algoSolutions.linekdListW13;
 
 
-public class LinkedListW12<E> {
 
-    public NodeW12<E> head;
-    public NodeW12<E> tail;
+public class LinkedListW13<E> {
+
+    public NodeW13<E> head;
+    public NodeW13<E> tail;
 
     public int size;
 
 
     public void add(E value) {
-        NodeW12<E> newNode = new NodeW12<>(value);
+        NodeW13<E> newNode = new NodeW13<>(value);
         if (head == null) {
             head = tail = newNode;
         } else {
@@ -23,7 +24,7 @@ public class LinkedListW12<E> {
 
 
     public void print() {
-        NodeW12<E> current = head;
+        NodeW13<E> current = head;
         while (current != null) {
             System.out.print(current.value + " -> ");
             current = current.next;

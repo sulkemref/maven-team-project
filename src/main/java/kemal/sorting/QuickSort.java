@@ -9,38 +9,41 @@ public class QuickSort {
         System.out.println(arrayToString(array));
         quickSort(array, 0, array.length - 1);
 
-//        test1();
+       test1();
 
     }
 
-    public static void quickSort(int[] arr, int from, int to) {
+    public static void quickSort(int[] arr, int from, int to) { // O(nlogn) // O(n^2)
 
         if (from < to) {
 
-            int divideIndex = partition(arr, from, to);
+            int divideIndex = partition(arr, from, to); //19
 
-            quickSort(arr, from, divideIndex - 1);
+            quickSort(arr, from, divideIndex - 1); //18 // left part
 
-            quickSort(arr, divideIndex, to);
+            quickSort(arr, divideIndex, to); // right part
         }
     }
-
+  //int [] array = new int[] {64, 42, 73, 41, 32, 53, 16, 24, 57, 42, 74, 55, 36};
+    //                          0
+    //                  pivot = 64                                            19 20
     private static int partition(int[] arr, int from, int to) {
         int rightIndex = to;
         int leftIndex = from;
 
-        int pivot = arr[from + (to - from) / 2];
+        int pivot = arr[from]; //+ (to - from) / 2
         while (leftIndex <= rightIndex) {
-
+                    //64 < 64
             while (arr[leftIndex] < pivot) {
                 leftIndex++;
             }
-
+                //36 > 64
             while (arr[rightIndex] > pivot) {
                 rightIndex--;
             }
-
+                //0   < 20
             if (leftIndex <= rightIndex) {
+
                 swap(arr, rightIndex, leftIndex);
                 leftIndex++;
                 rightIndex--;
@@ -129,40 +132,43 @@ public class QuickSort {
     }
 
     private static void test1() {
-        int testLen = 100000000;
+        int testLen = 1000000;
 
         int[] arr1 = new int[testLen];
         int[] arr2 = new int[testLen];
 
-        System.out.println("\n-----Случайный массив------");
+        System.out.println("\n-----Random Array------");
 
         for (int i = 0; i < testLen; i++) {
             arr2[i] = arr1[i] = (int)Math.round(Math.random() * 10000);
         }
 
-        System.out.println("Быстрая сортировка:");
+        System.out.println("Quick sort:");
         measureTime(() -> quickSort(arr1, 0, testLen - 1));
 
-        System.out.println("Сортировка слиянием:");
-        measureTime(() -> mergeSort(arr2));
+//        System.out.println("Merge sort:");
+//        measureTime(() -> mergeSort(arr2));
+
+        System.out.println("Bubble sort:");
+        measureTime(() -> bubbleSort(arr2));
     }
 
     private static void test2() {
-        int testLen = 100000000;
+        int testLen = 100000;
 
         int[] arr1 = new int[testLen];
         int[] arr2 = new int[testLen];
 
-        System.out.println("\n-----Отсортированный массив------");
+        System.out.println("\n-----Sorted Array------");
 
         for (int i = 0; i < testLen; i++) {
             arr2[i] = arr1[i] = i;
         }
 
-        System.out.println("Быстрая сортировка:");
+        System.out.println("Quick sort:");
         measureTime(() -> quickSort(arr1, 0, testLen - 1));
 
-        System.out.println("Сортировка пузырьком:");
+        System.out.println("Bubble sort:");
         measureTime(() -> mergeSort(arr2));
 
     }
@@ -171,6 +177,6 @@ public class QuickSort {
         long startTime = System.currentTimeMillis();
         task.run();
         long elapsed = System.currentTimeMillis() - startTime;
-        System.out.println("Затраченное время: " + elapsed + " ms");
+        System.out.println("Consuming time: " + elapsed + " ms");
     }
 }

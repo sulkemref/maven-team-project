@@ -6,7 +6,7 @@ public class SelectionSort {
 
     public static void main(String[] args) { //time O(n^2) space O(1)
         int[] array = new int[]{64, 16, 73, 41, 16, 53, 16, 24, 57, 42, 16, 55, 36};
-        for(int i = 0; i < array.length;i++){ // n
+        for(int i = 0; i < array.length;i++){
             System.out.println(Arrays.toString(array));
             int minIndex = minElementFromTo(array,i);
             swap(array,i,minIndex);

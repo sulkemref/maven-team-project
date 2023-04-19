@@ -18,6 +18,8 @@ public class LengthOfLastWord {
     }
 
 
+//    |Time Complexity  - 0(n)|
+//    |Space Complexity - 0(1)|
     private static int lastWordLength(String s){
 
         s = s.strip();                        // removes whitespaces from beginning/end of String

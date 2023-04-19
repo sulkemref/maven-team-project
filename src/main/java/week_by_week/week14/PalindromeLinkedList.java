@@ -14,11 +14,15 @@ public class PalindromeLinkedList {
         myLinkedList.add(2);
         myLinkedList.add(6);
         myLinkedList.add(2);
-        myLinkedList.add(1);
+        myLinkedList.add(7);
 
         myLinkedList.head.print();
 
-        System.out.println(withTwoPointer(myLinkedList.head));
+        ListNode listNode = reverseLinkedList(myLinkedList.head);
+
+        listNode.print();
+
+        //System.out.println(withTwoPointer(myLinkedList.head));
 
 
     }
@@ -99,6 +103,22 @@ public class PalindromeLinkedList {
             right = right.next;
         }
         return true;
+    }
+
+
+    public static ListNode reverseLinkedList(ListNode head){// 1 2 6 2 7
+
+        ListNode current = head;
+        ListNode prev = null;
+
+        while (current !=null ){
+            ListNode nextNode = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextNode;
+        }
+
+        return prev;
     }
 }
 

@@ -30,7 +30,7 @@ class Palindrome_Linked_ListTest {
                 arguments(true, new int[]{4}),
                 arguments(true, new int[]{4,4}),
                 arguments(false, new int[]{}),
-                arguments(false, new int[]{1,2,3})
+                arguments(false, new int[]{0,1,2,3})
         );
     }
 }

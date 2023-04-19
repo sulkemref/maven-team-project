@@ -4,10 +4,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class Find_All_Elements_Greater_Than_Their_RightTest {
@@ -17,11 +20,14 @@ class Find_All_Elements_Greater_Than_Their_RightTest {
     @ParameterizedTest
     @MethodSource("getInput")
     void find(int[] expectedArray, int[] inputArray) {
-        List<Integer> resultList = obj.find(inputArray);
-        int[] resultArray = resultList.stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
-        assertArrayEquals(expectedArray , resultArray);
+        List<Integer> resultList = obj.find2(inputArray);
+//        int[] resultArray = resultList.stream()
+//                .mapToInt(Integer::intValue)
+//                .toArray();
+//        assertArrayEquals(expectedArray , resultArray);
+        List<Integer> expectedlist =  Arrays.stream(expectedArray).boxed().toList();
+
+        assertEquals(expectedlist,resultList,"Equals test");
     }
 
     private static Stream<Arguments> getInput() {

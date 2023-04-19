@@ -28,9 +28,8 @@ public class Palindrome_Linked_List {
     private ListNode reverseLinkedList(ListNode head){
         ListNode present = head;
         ListNode prev = null;
-        ListNode next = null;
         while (present!=null){
-            next=present.next;
+            ListNode next=present.next;
             present.next=prev;
             prev=present;
             present=next;

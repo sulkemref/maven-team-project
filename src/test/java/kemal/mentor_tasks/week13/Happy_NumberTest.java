@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Happy_NumberTest {
 
-    private static final String happyNumberFile= "/Users/kemal/SynologyDrive/Cydeo/IdeaProjects/maven-team-project/src/test/java/kemal/mentor_tasks/week13/happy_numbers.txt";
+    private static final String happyNumberFile= "/src/test/java/kemal/mentor_tasks/week13/happy_numbers.txt";
     private static final List<Integer> happyNumberList = new ArrayList<>();
     private static final List<Integer> UnhappyNumberList = new ArrayList<>();
     private static final Happy_Number obj = new Happy_Number();

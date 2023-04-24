@@ -75,4 +75,19 @@ public class NodeUtility {
         }
         return prev;
     }
+
+    public static void makeCircleLinkList(ListNode head, int n){
+        if(n==-1) return;
+        ListNode startCircleNode=null;
+        ListNode current = head;
+
+        while (current.next!=null){
+            if(n==0){
+                startCircleNode=current;
+            }
+            current=current.next;
+            n--;
+        }
+        current.next=startCircleNode;
+    }
 }

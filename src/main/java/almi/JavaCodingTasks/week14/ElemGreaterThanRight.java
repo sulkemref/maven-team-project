@@ -20,7 +20,7 @@ public class ElemGreaterThanRight {
         greaterThanRight(array);
     }
 
-    public static void greaterThanRight(int[] array){
+    public static List<Integer> greaterThanRight(int[] array){
 
         Deque<Integer> stack = new LinkedList<>();
 
@@ -34,8 +34,8 @@ public class ElemGreaterThanRight {
 
         List<Integer> arrayList = new ArrayList<>(stack);
         Collections.reverse(arrayList);
-        System.out.println(arrayList);
-
+//        System.out.println(arrayList);
+        return arrayList;
 
     }
 

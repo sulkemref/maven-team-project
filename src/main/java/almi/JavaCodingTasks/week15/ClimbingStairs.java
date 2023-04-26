@@ -8,7 +8,7 @@ public class ClimbingStairs {
 
     public static void main(String[] args) {
 
-        solution(5);
+        System.out.println(solution(10));
 
 
 
@@ -32,6 +32,8 @@ public class ClimbingStairs {
 
         System.out.println(c);
         return c;
+
+//        return solution(n - 1) + solution(n - 2); <- Using recursion
     }
 
 

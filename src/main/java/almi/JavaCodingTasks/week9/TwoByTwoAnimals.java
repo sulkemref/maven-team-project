@@ -28,7 +28,7 @@ public class TwoByTwoAnimals {
 
 //    |Time Complexity  - 0(n)|
 //    |Space Complexity - 0(n)|
-    public static Map<String, Integer> twoBy2(List<String> animals){
+    private static Map<String, Integer> twoBy2(List<String> animals){
 
 
             Map<String, Integer> map = new HashMap<>();

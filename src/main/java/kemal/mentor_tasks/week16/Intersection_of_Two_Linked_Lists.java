@@ -7,6 +7,8 @@ import java.util.Set;
 
 public class Intersection_of_Two_Linked_Lists {
 
+//    https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+
     public ListNode getIntersectionNodeSet(ListNode headA, ListNode headB) { //Time O(n) Space O(n)
         if(headA==null||headB==null)
             return null;

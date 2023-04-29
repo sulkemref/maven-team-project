@@ -45,13 +45,13 @@ public class MyDoubleLinkedList<T> {
             return;
         }
         DoubleListNode<T> current = head;
-        System.out.print("null → ");
+        System.out.print("null ← ");
 
         while (current!=null){
             System.out.print(current.value + (current.next!=null?" ⇄ ":""));
             current=current.next;
         }
-        System.out.println(" ← null");
+        System.out.println(" → null");
     }
 
     public void deleteByValueMyDoubleLinkedList(T value){
@@ -90,9 +90,15 @@ public class MyDoubleLinkedList<T> {
     }
 
     public void reverseDoubleLinkedList(){
+//        reverseDoubleLinkedListFromTail();
+        reverseDoubleLinkedListFromHead();
+    }
 
-        DoubleListNode current = tail;
-        DoubleListNode prev = null;
+    public void reverseDoubleLinkedListFromTail(){
+
+        DoubleListNode<T> current = tail;
+        DoubleListNode<T> prev = null;
+        head=current;
 
         while (current!=null){
             current.next=current.prev;
@@ -100,7 +106,22 @@ public class MyDoubleLinkedList<T> {
             prev=current;
             current=current.next;
         }
-
+        tail=prev;
     }
-    // print
+
+    public void reverseDoubleLinkedListFromHead(){
+
+        DoubleListNode<T> current = head;
+        DoubleListNode<T> next = null;
+        tail=current;
+
+        while (current!=null){
+            current.prev=current.next;
+            current.next=next;
+            next=current;
+            current=current.prev;
+        }
+        head=next;
+    }
+
 }

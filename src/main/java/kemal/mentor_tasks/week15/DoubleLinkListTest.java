@@ -7,26 +7,32 @@ public class DoubleLinkListTest {
     public static void main(String[] args) {
         MyDoubleLinkedList<Integer> dl = new MyDoubleLinkedList<>();
 
-        System.out.println(dl.isEmpty());
-        System.out.println(dl.size);
-        dl.printMyDoubleLinkedList();
-
-        dl.addFirst(10);
-        dl.addFirst(20);
-        dl.addLast(50);
+        dl.addLast(1);
+        dl.addLast(2);
+        dl.addLast(3);
+        dl.addLast(4);
+        dl.addLast(5);
 
         dl.printMyDoubleLinkedList();
         System.out.println(dl.size);
-
-        dl.deleteByValueMyDoubleLinkedList(10);
-
-        dl.printMyDoubleLinkedList();
-        System.out.println(dl.size);
-        System.out.println(dl.isEmpty());
 
         dl.reverseDoubleLinkedList();
 
         dl.printMyDoubleLinkedList();
+
+        while (dl.tail!=null){
+            System.out.print(dl.tail.value +" ");
+            dl.tail=dl.tail.prev;
+        }
+
+        System.out.println();
+
+        while (dl.head!=null){
+            System.out.print(dl.head.value +" ");
+            dl.head=dl.head.next;
+        }
+
+
 
 
     }

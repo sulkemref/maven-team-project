@@ -11,28 +11,28 @@ public class DoubleLinkListTest {
         dl.addLast(2);
         dl.addLast(3);
         dl.addLast(4);
-        dl.addLast(5);
+
 
         dl.printMyDoubleLinkedList();
         System.out.println(dl.size);
 
-        dl.reverseDoubleLinkedList();
+       dl.reverseDoubleLinkedList();
 
         dl.printMyDoubleLinkedList();
 
-        while (dl.tail!=null){
-            System.out.print(dl.tail.value +" ");
-            dl.tail=dl.tail.prev;
-        }
+//        while (dl.tail!=null){
+//            System.out.print(dl.tail.value +" ");
+//            dl.tail=dl.tail.prev;
+//        }
+//
+//        System.out.println();
+//
+//        while (dl.head!=null){
+//            System.out.print(dl.head.value +" ");
+//            dl.head=dl.head.next;
+//        }
 
-        System.out.println();
-
-        while (dl.head!=null){
-            System.out.print(dl.head.value +" ");
-            dl.head=dl.head.next;
-        }
-
-
+        System.out.println(dl.containsValue(2));
 
 
     }

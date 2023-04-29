@@ -124,4 +124,18 @@ public class MyDoubleLinkedList<T> {
         head=next;
     }
 
+    public boolean containsValue(T value){
+        DoubleListNode<T> currentH = head;
+        DoubleListNode<T> currentT = tail;
+
+        while (currentH!=currentT.prev&&currentH!=currentT){
+            if(currentH.value==value||currentT.value==value){
+                return true;
+            }
+            currentH=currentH.next;
+            currentT=currentT.prev;
+        }
+        return false;
+    }
+
 }

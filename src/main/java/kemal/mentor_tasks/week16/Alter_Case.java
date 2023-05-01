@@ -1,21 +1,44 @@
 package kemal.mentor_tasks.week16;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class Alter_Case {
 
-    public void alterCase(String filePath){
+
+    public void alterCase(String mainPath,String outputFileName,String inputFileName){
+
+        StringBuilder sb = new StringBuilder();
+
+        try {
+            sb = withBufferedReader(mainPath+inputFileName);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        boolean flag=true;
+
+        for(int i = 0; i<sb.length();i++){
+            if(Character.isLetter(sb.charAt(i))){
+                if (flag){
+                    sb.setCharAt(i,Character.toUpperCase(sb.charAt(i)));
+                    flag=false;
+                }else {
+                    sb.setCharAt(i,Character.toLowerCase(sb.charAt(i)));
+                    flag=true;
+                }
+            }
+        }
+
+        sb.setLength(sb.length() - 1);
+        withBufferedWriter(mainPath+outputFileName,sb);
 
     }
 
-    private StringBuilder withBufferedReader(String readFilePath) throws IOException {
+    public StringBuilder withBufferedReader(String readFilePath) throws IOException {
         File file = new File(readFilePath);
         StringBuilder stringBuilder = new StringBuilder();
         try (FileReader fileReader = new FileReader(file);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)) { //try with resources statement
-            // returns the system-dependent line separator string. On Windows systems, this is typically "\r\n",
-            // while on Unix/Linux systems, it is typically "\n".
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             String ls = System.getProperty("line.separator");
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -25,26 +48,18 @@ public class Alter_Case {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        String content = stringBuilder.toString();
-        System.out.println(content);
-
         return stringBuilder;
     }
 
-    static void withBufferedWriter(String writePath) {
+    private void withBufferedWriter(String writePath,StringBuilder writeContent) {
         File file = new File(writePath);
-        Arrays.stream(writeContent.split("\n")).forEach(
-                line -> {
-                    try (FileWriter fileWriter = new FileWriter(file);
-                         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                        bufferedWriter.write(line);
-                        bufferedWriter.newLine();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-    }
+        try (FileWriter fileWriter = new FileWriter(file);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+            bufferedWriter.write(writeContent.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 }

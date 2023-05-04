@@ -12,7 +12,7 @@ public class Lowest_Common_Ancestor {
                 ||q==root) // case 3
             return root;
         return lowestCommonAncestorRec(q.val>root.val&&p.val>root.val?root.right:root.left,p,q);
-        // if p & q > root move to right else to left
+
     }
 
     public TreeNode lowestCommonAncestorWhile(TreeNode root, TreeNode p, TreeNode q){
@@ -22,7 +22,7 @@ public class Lowest_Common_Ancestor {
                     ||q==root) // case 3
                 break;
             else
-                root=q.val>root.val&&p.val>root.val?root.right:root.left;
+                root=q.val>root.val&&p.val>root.val?root.right:root.left; // if p & q > root move to right else to left
         }
         return root;
     }

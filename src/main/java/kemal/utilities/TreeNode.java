@@ -6,14 +6,14 @@ public class TreeNode {
       public int val;
       public TreeNode left;
       public TreeNode right;
-      private int random = (int)(Math.random() * 100);
+      private final int random = (int)(Math.random() * 100);
       public TreeNode(int x) { val = x; }
 
       @Override
       public String toString() {
             return "TreeNode{" +
                     "val=" + val +
-                    " hashCode=" + hashCode() +
+                    ", hashCode=" + hashCode() +
                     '}';
       }
 

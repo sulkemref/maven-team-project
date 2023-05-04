@@ -73,5 +73,45 @@ public class TreeUtility {
         return null;
 
     }
+    void preOrderTraversal(TreeNode root){
+        if(root==null) // termination or base condition
+            return;
+        System.out.print(root.val+", ");// visit root
+        preOrderTraversal(root.left); //visit left subtree
+        preOrderTraversal(root.right); //visit right subtree
+    }
+
+    void inOrderTraversal(TreeNode root){
+        if(root==null) // termination or base condition
+            return;
+        inOrderTraversal(root.left); //visit left subtree
+        System.out.print(root.val+", ");// visit root
+        inOrderTraversal(root.right); //visit right subtree
+    }
+
+
+    void postOrderTraversal(TreeNode root){
+        if(root==null) // termination or base condition
+            return;
+        postOrderTraversal(root.left); //visit left subtree
+        postOrderTraversal(root.right); //visit right subtree
+        System.out.print(root.val+", ");// visit root
+    }
+
+    void levelOrderTraversal(TreeNode root){
+        if(root==null)
+            return;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            TreeNode toVisit = queue.poll();
+            System.out.print(toVisit.val+", ");
+            if(toVisit.left!=null)
+                queue.add(toVisit.left);
+            if(toVisit.right!=null)
+                queue.add(toVisit.right);
+        }
+
+    }
 
 }

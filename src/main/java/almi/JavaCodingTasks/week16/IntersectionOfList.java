@@ -3,6 +3,15 @@ package almi.JavaCodingTasks.week16;
 import java.util.HashSet;
 import java.util.Set;
 
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) {
+        val = x;
+        next = null;
+    }
+}
+
 public class IntersectionOfList {
 
 
@@ -30,15 +39,7 @@ public class IntersectionOfList {
 
     }
 
-
 }
 
- class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-      }
-  }
+
 

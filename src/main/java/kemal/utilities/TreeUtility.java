@@ -1,47 +1,29 @@
 package kemal.utilities;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class TreeUtility {
 
 
     public static TreeNode createBinaryTreeFromArray(Integer[] arr){
-        if(arr.length==0){
+        if(arr.length==0||arr[0]==null){
             return null;
         }
-        TreeNode treeNode;
-        TreeNode current;
-        TreeNode root=null;
-        Queue<TreeNode> queue = new LinkedList<>();
-        boolean flag=true;
-        for (Integer integer : arr) {
-            if (integer != null) {
-                treeNode = new TreeNode(integer);
-            } else {
-                treeNode = null;
+        TreeNode[] treeNodeArr = new TreeNode[arr.length];
+        for(int i = 0 ; i < arr.length;i++){
+            treeNodeArr[i] = arr[i]==null?null:new TreeNode(arr[i]);
+        }
+        TreeNode root = treeNodeArr[0];
+        for(int i = 0 , j = 1; j < arr.length;i++){
+            while (treeNodeArr[i]==null){
+                i++;
             }
-
-            if (queue.isEmpty() && integer != null) {
-                root = treeNode;
-                queue.add(root);
-                continue;
-            }
-            current = queue.peek();
-            if (flag) {
-                current.left = treeNode;
-                queue.add(treeNode);
-                flag = false;
-            } else {
-                current.right = treeNode;
-                queue.add(treeNode);
-                flag = true;
-                queue.poll();
-            }
+            treeNodeArr[i].left=treeNodeArr[j++];
+            treeNodeArr[i].right=treeNodeArr[j++];
         }
         return root;
     }
+
 
     public static boolean contains(TreeNode root ,int value){
         if (root==null) return false;

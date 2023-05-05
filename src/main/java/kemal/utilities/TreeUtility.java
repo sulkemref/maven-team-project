@@ -73,7 +73,7 @@ public class TreeUtility {
         return null;
 
     }
-    void preOrderTraversal(TreeNode root){
+    public static void  preOrderTraversal(TreeNode root){
         if(root==null) // termination or base condition
             return;
         System.out.print(root.val+", ");// visit root
@@ -81,7 +81,7 @@ public class TreeUtility {
         preOrderTraversal(root.right); //visit right subtree
     }
 
-    void inOrderTraversal(TreeNode root){
+    public static void inOrderTraversal(TreeNode root){
         if(root==null) // termination or base condition
             return;
         inOrderTraversal(root.left); //visit left subtree
@@ -90,7 +90,7 @@ public class TreeUtility {
     }
 
 
-    void postOrderTraversal(TreeNode root){
+    public static void postOrderTraversal(TreeNode root){
         if(root==null) // termination or base condition
             return;
         postOrderTraversal(root.left); //visit left subtree
@@ -98,7 +98,7 @@ public class TreeUtility {
         System.out.print(root.val+", ");// visit root
     }
 
-    void levelOrderTraversal(TreeNode root){
+    public static void levelOrderTraversal(TreeNode root){
         if(root==null)
             return;
         Queue<TreeNode> queue = new LinkedList<>();

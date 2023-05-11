@@ -19,6 +19,8 @@ public class TreeUtility {
                 i++;
             }
             treeNodeArr[i].left=treeNodeArr[j++];
+            if (j==arr.length)
+                break;
             treeNodeArr[i].right=treeNodeArr[j++];
         }
         return root;

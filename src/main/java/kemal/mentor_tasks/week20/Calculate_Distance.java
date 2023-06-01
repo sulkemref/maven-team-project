@@ -13,7 +13,7 @@ public class Calculate_Distance{
     private final static List<List<Integer>> coordinates = new ArrayList<>();
     private final static StringBuilder stringBuilder = new StringBuilder();
 
-    private  FileReader reader;
+//    private  FileReader reader;
 
     public Calculate_Distance(String mainPath, String inputFileName, String outputFileName){
         this.mainPath = mainPath;
@@ -51,37 +51,40 @@ public class Calculate_Distance{
         stringBuilder.setLength(0);
 
         for (int i = 0 ; i < textArray.length ; i++){
-            stringBuilder.append(textArray[i]).append("\nOutput result is: ").append (results[i]+"\n");
+            stringBuilder.append(textArray[i]).append("\nOutput result is: ").append(results[i]).append("\n");
         }
 
         bufferedWriter();
 
     }
 
-    private void readWithStreamTokenizer() throws IOException {
-        reader = new FileReader(mainPath+inputFileName);
-        StreamTokenizer tokenizer = new StreamTokenizer(reader);
-        tokenizer.eolIsSignificant(true); // to work TT_EOL
-        List<Integer> numbers = new ArrayList<>();
-        int token = tokenizer.nextToken();
-        do  {
-            if (token == StreamTokenizer.TT_NUMBER) {
-                numbers.add((int)tokenizer.nval);
-            }
-            token = tokenizer.nextToken();
-            if (token == StreamTokenizer.TT_EOL||token == StreamTokenizer.TT_EOF){
-                if (numbers.size()!=4){
-                    throw new InvalidParameterException();
+    private void readWithStreamTokenizer() {
+        try (FileReader reader = new FileReader(mainPath+inputFileName)){
+            StreamTokenizer tokenizer = new StreamTokenizer(reader);
+            tokenizer.eolIsSignificant(true); // to work TT_EOL
+            List<Integer> numbers = new ArrayList<>();
+            int token = tokenizer.nextToken();
+            do  {
+                if (token == StreamTokenizer.TT_NUMBER) {
+                    numbers.add((int)tokenizer.nval);
                 }
-                coordinates.add(new ArrayList<>(numbers));
-                numbers.clear();
-            }
-        }while (token != StreamTokenizer.TT_EOF);
-        reader.close();
+                token = tokenizer.nextToken();
+                if (token == StreamTokenizer.TT_EOL||token == StreamTokenizer.TT_EOF){
+                    if (numbers.size()!=4){
+                        throw new InvalidParameterException();
+                    }
+                    coordinates.add(new ArrayList<>(numbers));
+                    numbers.clear();
+                }
+            }while (token != StreamTokenizer.TT_EOF);
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void bufferedReader() throws IOException {
-        reader = new FileReader(mainPath+inputFileName);
+    private void bufferedReader() throws IOException {
+        FileReader reader = new FileReader(mainPath+inputFileName);
         BufferedReader bufferedReader = new BufferedReader(reader);
             String ls = System.getProperty("line.separator");
             String line;
@@ -99,7 +102,6 @@ public class Calculate_Distance{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
 

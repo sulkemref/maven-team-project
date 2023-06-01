@@ -7,5 +7,6 @@ public class TNode {
 
     public TNode(int value) {
         this.value = value;
+
     }
 }

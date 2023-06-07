@@ -22,6 +22,12 @@ class Range_Sum_of_BSTTest {
         assertEquals(expectedResult,obj.rangeSumBST(root,low,high));
     }
 
+    @ParameterizedTest
+    @MethodSource("getInput")
+    void rangeSumBST2(int expectedResult, TreeNode root, int low, int high) {
+        assertEquals(expectedResult,obj.rangeSumBST2(root,low,high));
+    }
+
     private static Stream<Arguments> getInput() {
         return Stream.of(
                 arguments(32, TreeUtility.createBinaryTreeFromArray(new Integer[]{10,5,15,3,7,null,18}),7,15),

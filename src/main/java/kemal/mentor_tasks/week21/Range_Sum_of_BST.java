@@ -16,5 +16,18 @@ public class Range_Sum_of_BST {
         rangeSumBST(root.right,low,high);
         return result;
     }
+
+    public int rangeSumBST2(TreeNode root, int low, int high) { // time O(n) space O(n)
+        if(root==null)
+            return 0;
+        rangeSumBST(root.left,low,high);
+        if(root.val>=low)
+            result+=root.val;
+        if(root.val>=high)
+            return result;
+        rangeSumBST(root.right,low,high);
+        return result;
+    }
+
 }
 

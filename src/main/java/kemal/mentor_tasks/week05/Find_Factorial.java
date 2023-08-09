@@ -6,6 +6,7 @@ public class Find_Factorial {
     public static void main(String[] args) {
 
         System.out.println(factorial(12));
+        System.out.println(factorialRec(12));
 
     }
     public static long factorial(int n){
@@ -18,5 +19,16 @@ public class Find_Factorial {
             n--;
         }
         return result;
+    }
+
+    public static long factorialRec(int n){
+        if(n <= 0)
+            return 1;
+        long result = 1;
+        while (n>0){
+            result*=n;
+            n--;
+        }
+        return factorial(n)*result;
     }
 }

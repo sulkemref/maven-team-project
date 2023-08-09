@@ -18,7 +18,8 @@ public class First_Non_repeating_Vowel {
         System.out.println(firstNonRepeatingVowelMap("google"));
     }
 
-    /**Given a string, write a method to find the first non-repeating vowel (a, e, i, o, u) in it and return its index. If it doesn't exist, return -1. Assume that all the characters of the String is lowercase.
+    /**Given a string, write a method to find the first non-repeating vowel (a, e, i, o, u) in it and return its index.
+     If it doesn't exist, return -1. Assume that all the characters of the String is lowercase.
             ( Do not use String class functions other than charAt() and length() )*/
     public static int firstNonRepeatingVowel(String str){
         str = str.toLowerCase();

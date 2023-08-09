@@ -32,13 +32,13 @@ public class MissingNumber {
     public static int missingNumber(int[] nums) {
 
         int sumElements = 0;
-        int faclorial = 0;
+        int fullSum= 0;
 
         for(int i = 0 ; i< nums.length; i++){
             sumElements+=nums[i];
-            faclorial+=i;
+            fullSum+=i;
         }
-        return (faclorial+nums.length)-sumElements;
+        return (fullSum+nums.length)-sumElements;
     }
 
 
